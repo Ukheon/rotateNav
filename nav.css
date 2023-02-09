@@ -1,0 +1,258 @@
+@keyframes scale3 {
+
+    0%,
+    65% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes rotate1 {
+
+    0%,
+    65% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.nonTouch {
+    touch-action: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.ring-wrapper {
+    position: fixed;
+    display: block;
+    width: 330px;
+    height: 330px;
+    margin: 0 auto;
+    overflow: hidden;
+    bottom: calc(50% - 165px);
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 100%;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
+
+    animation: scale3;
+}
+
+.ring {
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-radius: 100%;
+}
+
+.ring-display {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+
+    background: white;
+    overflow: hidden;
+    position: absolute;
+}
+
+.interaction {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.ring:hover+.ring {
+    transition: box-shadow 0.25s;
+}
+
+.layer-1 {
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+}
+
+#labels {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+
+}
+
+.navLabel {
+
+
+    margin: 0 0;
+    background-color: transparent;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    transform-origin: 50% 0;
+    position: absolute;
+    transform: rotate(0deg) translate(0, -50%);
+    line-height: 100px;
+    font-size: 14px;
+    transition: color 1s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navLabel a {
+    list-style: none;
+    letter-spacing: -1px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-size: auto 25px;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.navLabel span {
+    position: relative;
+    top: 25px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+
+#navToggle {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    display: block;
+    text-align: center;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 17%);
+    border-radius: 100%;
+    line-height: 50px;
+    cursor: pointer;
+    animation: rotate1 5s alternate;
+    animation-iteration-count: 3;
+}
+
+
+@keyframes scale1 {
+    50% {
+        transform: scale(0.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes scale2 {
+    50% {
+        transform: scale(0.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+
+#navToggle div {
+    border-radius: 50%;
+}
+
+#navClose {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100vw;
+    height: 100vh;
+    touch-action: none;
+}
+
+
+.circle1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px 5px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to bottom left, #ffffff, #55aaff);
+    animation: scale1 3s alternate;
+    animation-iteration-count: 5;
+}
+
+.circle2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px;
+    background: white;
+    animation: scale2 3s alternate;
+    animation-iteration-count: 5;
+}
+
+.innerCircleArea {
+    position: relative;
+    z-index: 100;
+    width: 100px;
+    height: 100px;
+    margin: 115px 115px;
+    border-radius: 100%;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
+
+}
+
+.innerCircle1 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin: 10px 10px;
+
+    border-radius: 100%;
+    background: linear-gradient(to bottom left, #ffffff, #55aaff);
+    z-index: 9;
+}
+
+.innerCircle2 {
+    width: 40px;
+    height: 40px;
+    margin: 30px 30px;
+    position: absolute;
+    z-index: 10;
+
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.6);
+
+}
